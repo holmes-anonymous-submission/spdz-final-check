@@ -1,0 +1,9 @@
+sfix.set_precision(9, 10)
+
+variance1 = sfix(5.5)
+variance2 = sfix(5.5)
+
+T = variance1 / variance2
+cv = sfix(12.2)
+
+res = cv > T

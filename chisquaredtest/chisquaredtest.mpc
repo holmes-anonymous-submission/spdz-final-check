@@ -1,0 +1,25 @@
+sfix.set_precision(9, 10)
+
+num_bins = 100
+
+v1 = []
+v2 = []
+
+for i in range(num_bins):
+    v1.append(sfix(156))
+    v2.append(sfix(256))
+
+np = []
+for i in range(num_bins):
+    np.append(sfix(384))
+
+T = sfix(0)
+
+for i in range(num_bins):
+    nominator = (v1[i] - v2[i]) - np[i]
+    nominator = nominator * nominator
+    denominator = np[i]
+    T = T + nominator / denominator
+
+cv = sfix(12.2)
+res = cv > T
